@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="top-header">
+    <div class="top-icon">  
+        <img src="../../static/resources/logo.png" alt="X logo" class="xlogo">
+    </div>
+    <div class="top-icon">
+        <img src="../resources/pfp.png" alt="Profile" class="plogo">
+    </div>
+</div> 
+<div class="content">
+    <section>
+        {% include 'posts_template.html' %}
+    </section>
+</div>
+{% endblock %}
