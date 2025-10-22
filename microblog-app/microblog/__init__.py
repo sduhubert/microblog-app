@@ -18,9 +18,12 @@ def create_app(test_config=None):
     app.config["SECRET_KEY"] = "93220d9b340cf9a6c39bac99cce7daf220167498f91fa"
 
     # Code to place inside create_app, after the other app.config assignment
+    """
     app.config[
         "SQLALCHEMY_DATABASE_URI"
     ] = "mysql+pymysql://26_webapp_33:lJuqOOoe@mysql.lab.it.uc3m.es/26_webapp_33a"
+    """
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///microblog.db"
 
     db.init_app(app)
 
@@ -41,4 +44,3 @@ def create_app(test_config=None):
     app.register_blueprint(main.bp)
     app.register_blueprint(auth.bp)
     return app
-

@@ -1,17 +1,8 @@
-{% extends "base.html" %}
-
-{% block content %}
-<div class="top-header">
-    <div class="top-icon">  
-        <img src="../../static/resources/logo.png" alt="X logo" class="xlogo">
-    </div>
-    <div class="top-icon">
-        <img src="../resources/pfp.png" alt="Profile" class="plogo">
-    </div>
-</div> 
+{% extends "base.html" %} {% block content %}
 <div class="content">
-    <section>
-        {% include 'posts_template.html' %}
-    </section>
+  <header>
+    <h2>{{ user.name }}</h2>
+  </header>
+  <section>{% include 'posts_template.html' %}</section>
 </div>
 {% endblock %}

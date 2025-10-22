@@ -22,6 +22,7 @@ class Post(db.Model):
     user: Mapped["User"] = relationship(back_populates="posts")
     text: Mapped[str] = mapped_column(String(512))
     timestamp: Mapped[datetime.datetime] = mapped_column(
+        # pylint: disable=not-callable
         DateTime(timezone=True), server_default=func.now()
     )
     response_to_id: Mapped[Optional[int]] = mapped_column(ForeignKey("post.id"))
