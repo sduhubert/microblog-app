@@ -5,18 +5,22 @@
     style="text-decoration: none; color: inherit"
     >
   {% endif %}
-      <div class="post">
-        <div class="metadata">
-          <img
-            src="../../static/resources/Defaultpfp.png"
-            alt="Profile picture"
-            class="avatar"
-          />
-          <span class="username">{{ post.user.name }}</span>
-          <span class="timestamp">{{ post.timestamp }}</span>
+      {% if post.response_to is none %}
+        <div class="post original" data-post-id="{{ post.id }}">
+      {% else %}
+        <div class="post response">
+      {% endif %}
+          <div class="metadata">
+            <img
+              src="../../static/resources/Defaultpfp.png"
+              alt="Profile picture"
+              class="avatar"
+            />
+            <span class="username">{{ post.user.name }}</span>
+            <span class="timestamp">{{ post.timestamp }}</span>
+          </div>
+          <div class="content">{{ post.text }}</div>
         </div>
-        <div class="content">{{ post.text }}</div>
-      </div>
   {% if post.response_to is none %}
     </a>
   {% endif %}

@@ -26,5 +26,10 @@
     </header>
     <section class="content">{% block content %}{% endblock %}</section>
     <footer><small>Developed for Web applications</small></footer>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='microblog.js') }}"></script>
   </body>
 </html>
