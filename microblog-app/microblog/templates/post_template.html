@@ -1,19 +1,23 @@
 <div class="feed">
-  <a
+  {% if post.response_to is none %}
+    <a
     href="{{ url_for('main.post', post_id=post.id) }}"
     style="text-decoration: none; color: inherit"
-  >
-    <div class="post">
-      <div class="metadata">
-        <img
-          src="../../static/resources/Defaultpfp.png"
-          alt="Profile picture"
-          class="avatar"
-        />
-        <span class="username">{{ post.user.name }}</span>
-        <span class="timestamp">{{ post.timestamp }}</span>
+    >
+  {% endif %}
+      <div class="post">
+        <div class="metadata">
+          <img
+            src="../../static/resources/Defaultpfp.png"
+            alt="Profile picture"
+            class="avatar"
+          />
+          <span class="username">{{ post.user.name }}</span>
+          <span class="timestamp">{{ post.timestamp }}</span>
+        </div>
+        <div class="content">{{ post.text }}</div>
       </div>
-      <div class="content">{{ post.text }}</div>
-    </div>
-  </a>
+  {% if post.response_to is none %}
+    </a>
+  {% endif %}
 </div>

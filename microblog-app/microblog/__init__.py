@@ -18,12 +18,11 @@ def create_app(test_config=None):
     app.config["SECRET_KEY"] = "93220d9b340cf9a6c39bac99cce7daf220167498f91fa"
 
     # Code to place inside create_app, after the other app.config assignment
-    """
     app.config[
         "SQLALCHEMY_DATABASE_URI"
-    ] = "mysql+pymysql://26_webapp_33:lJuqOOoe@mysql.lab.it.uc3m.es/26_webapp_33a"
-    """
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///microblog.db"
+    ] = "mysql+pymysql://26_webapp_00:Tq6qlpko@mysql.lab.it.uc3m.es/26_webapp_00a"
+
+    #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///microblog.db"
 
     db.init_app(app)
 
